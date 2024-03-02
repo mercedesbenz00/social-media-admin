@@ -1,0 +1,30 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": ["src/env.d.ts", "src/**/*", "src/**/*.vue"],
+  "compilerOptions": {
+    "allowJs": true,
+    "preserveValueImports": true,
+    "isolatedModules": true,
+    "useUnknownInCatchVariables": false,
+    "noImplicitAny": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@@/*": ["./*"]
+    },
+    "types": [
+      "vite-plugin-pages/client",
+      "vite/client",
+      "vite-plugin-vue-layouts/client",
+      "@types/lodash",
+      "@types/node",
+      "@types/qs"
+    ]
+  },
+
+  "references": [
+    {
+      "path": "./tsconfig.vite-config.json"
+    }
+  ]
+}

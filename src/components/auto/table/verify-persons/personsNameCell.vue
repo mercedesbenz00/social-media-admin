@@ -1,0 +1,16 @@
+<template>
+  <div class="flex items-center">
+    <Avatar :avatar="data.avatar" class="w-9 h-9 me-2" shape="circle"></Avatar>
+    <div class="text-sm font-bold" v-if="data.firstName && data.lastName">{{ data.firstName }} {{ data.lastName }}</div>
+    <div v-else class="text-sm font-bold">{{ data.displayName }}</div>
+  </div>
+</template>
+<script setup lang="ts">
+import type { PropType } from 'vue'
+const props = defineProps({
+  data: {
+    type: Object as PropType<any>,
+    required: true
+  }
+})
+</script>
